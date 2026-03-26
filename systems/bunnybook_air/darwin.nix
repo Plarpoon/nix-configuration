@@ -2,7 +2,16 @@
 
 {
   # Define the primary user of the system
-  system.primaryUser = "plarpoon";
+  system = {
+    primaryUser = "plarpoon";
+    stateVersion = 6;
+
+    # Rust update script
+    activationScripts.postActivation.text = ''
+      echo "Updating rust toolchains..." >&2
+      ${pkgs.rustup}/bin/rustup update
+    '';
+  };
 
   # Enable Flakes
   nix.settings.experimental-features = [
@@ -24,14 +33,7 @@
   # Time zone
   time.timeZone = "Europe/Stockholm";
 
-  system.stateVersion = 6;
-
   # Enable Touch ID for sudo
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  # Rust update script
-  system.activationScripts.postActivation.text = ''
-    echo "Updating rustup and cargo..." >&2
-    ${pkgs.rustup}/bin/rustup update
-  '';
 }

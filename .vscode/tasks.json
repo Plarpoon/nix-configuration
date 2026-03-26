@@ -6,9 +6,6 @@
             "type": "shell",
             "command": "statix check .",
             "problemMatcher": [],
-            "runOptions": {
-                "runOn": "folderOpen"
-            },
             "presentation": {
                 "reveal": "silent",
                 "panel": "shared"
