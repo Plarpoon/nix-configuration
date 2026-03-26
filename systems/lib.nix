@@ -25,11 +25,12 @@
 
         home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "backup";
-
-          home-manager.users.${username} = import ./${hostname}/home-manager;
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            backupFileExtension = "backup";
+            users.${username} = import ./${hostname}/home-manager;
+          };
         }
       ];
     };
@@ -52,11 +53,12 @@
 
         home-manager-darwin.darwinModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "backup";
-
-          home-manager.users.${username} = import ./${hostname}/home-manager;
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            backupFileExtension = "backup";
+            users.${username} = import ./${hostname}/home-manager;
+          };
         }
 
         nix-homebrew.darwinModules.nix-homebrew

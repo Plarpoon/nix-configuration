@@ -3,9 +3,10 @@
 {
   environment.systemPackages = with pkgs; [
     # Nix
-    nil
+    nixd
     nixfmt-rfc-style
     nix-index
+    statix
 
     # Shell
     alacritty

@@ -1,4 +1,4 @@
-{ ... }:
+_:
 
 {
   # Fallback DNS if systemd-resolved fails

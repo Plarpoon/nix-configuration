@@ -1,4 +1,4 @@
-{ ... }:
+_:
 
 {
   programs.ruff = {
@@ -11,11 +11,11 @@
       lint = {
         select = [ "ALL" ];
         ignore = [
-          "T201"    # Allow print statements
-          "D"       # Disable all docstring rules
-          "COM812"  # Disable trailing comma rule
-          "ANN401"  # Disallow dynamically typed types
-          "INP001"  # Disable check for implicit namespace package
+          "T201" # Allow print statements
+          "D" # Disable all docstring rules
+          "COM812" # Disable trailing comma rule
+          "ANN401" # Disallow dynamically typed types
+          "INP001" # Disable check for implicit namespace package
         ];
 
         pylint = {

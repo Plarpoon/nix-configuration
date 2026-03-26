@@ -1,4 +1,4 @@
-{ ... }:
+_:
 
 {
   # Intel I225-V ethernet controller hardware bug workaround:

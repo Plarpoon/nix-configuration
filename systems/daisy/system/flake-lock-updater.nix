@@ -1,4 +1,4 @@
-{ ... }:
+_:
 
 {
   # this just updates the flake.lock file and not the actual system itself
