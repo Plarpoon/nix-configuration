@@ -2,6 +2,8 @@
   nixpkgs,
   nix-darwin,
   home-manager,
+  home-manager-darwin,
+  nix-homebrew,
 }:
 
 {
@@ -48,7 +50,7 @@
       modules = [
         ./${hostname}
 
-        home-manager.darwinModules.home-manager
+        home-manager-darwin.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
@@ -56,6 +58,8 @@
 
           home-manager.users.${username} = import ./${hostname}/home-manager;
         }
+
+        nix-homebrew.darwinModules.nix-homebrew
       ];
     };
 }
